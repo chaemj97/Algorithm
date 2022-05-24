@@ -1,2 +1,4 @@
-a = [[1,1,1,1],[2,2,2,2]]
-print(list(zip(*a)))
+new_id = 'z-+.^.'
+no = new_id.maketrans('-_.~!@#$%^&*()=+[{]}:?,<>/','                          ')
+print(new_id.translate(no))
+print(len('-_.~!@#$%^&*()=+[{]}:?,<>/'))
