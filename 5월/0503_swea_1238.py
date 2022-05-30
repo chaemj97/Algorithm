@@ -4,7 +4,7 @@
 # Contact
 # 가장 나중에 연락 받게 될 사람 중 번호가 가장 큰 사람
 
-# 테스트 케이스 10개
+# 테스트 케이스 10개 
 for tc in range(1,11):
     # 입력 받는 데이터 길이, 시작점
     length, start = map(int,input().split())
