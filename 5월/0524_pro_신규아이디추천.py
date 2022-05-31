@@ -1,3 +1,5 @@
+# https://chaemi720.tistory.com/136
+
 def solution(new_id):
     answer = ''
     # 1. 모두 소문자

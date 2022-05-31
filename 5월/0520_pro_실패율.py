@@ -1,3 +1,4 @@
+# https://chaemi720.tistory.com/135
 def solution(N, stages):
     p = [[0,0] for _ in range(N+1)]
     p[0][1] = len(stages)

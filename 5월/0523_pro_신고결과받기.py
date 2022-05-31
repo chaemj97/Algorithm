@@ -1,3 +1,5 @@
+# https://chaemi720.tistory.com/137
+
 def solution(id_list, reports, k):
     N = len(id_list)
     answer = [0] * N

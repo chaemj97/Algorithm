@@ -1,3 +1,4 @@
+# https://chaemi720.tistory.com/135
 def solution(s):
     # 최초에 문자열이 분할이 안되면 결국 입력된 문자열의 길이가 최소의 길이가 됨
     answer = len(s)  
