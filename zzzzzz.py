@@ -1,17 +1,10 @@
-import re
-def solution(expression):
-    answer = []
-    combinations = [['+','-','*'],['+','*','-'],['-','+','*'],['-','*','+'],['*','-','+'],['*','+','-']]
-    for combination in combinations:
-        operand = re.split('[*+-]',expression)
-        operator = re.split('[0-9]+',expression)[1:-1]
-        for comb in combination:
-            while comb in operator:
-                idx = operator.index(comb)
-                operand[idx] = str(eval(operand[idx] + comb + operand[idx+1]))
-                del operand[idx+1]
-                del operator[idx]
-        answer.append(abs(int(operand[0])))
-    return max(answer)
-
-print(solution("100-200*300-500+20"))
+from collections import deque
+q = deque()
+q.append([3])
+q.append([4])
+print(q)
+print('--------')
+a = deque()
+a.append(3)
+a.append(4)
+print(a)
