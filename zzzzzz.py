@@ -1,10 +1,2 @@
-from collections import deque
-q = deque()
-q.append([3])
-q.append([4])
-print(q)
-print('--------')
-a = deque()
-a.append(3)
-a.append(4)
-print(a)
+rank = {0:6,'1':6,'2':5,'3':4,'4':3,'5':2,'6':1}
+print(rank[])
