@@ -1,3 +1,4 @@
+# https://chaemi720.tistory.com/145
 def solution(lottos, win_nums):
     rank = {0:6,1:6,2:5,3:4,4:3,5:2,6:1}
     # 오른차순 정렬
