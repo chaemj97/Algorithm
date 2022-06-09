@@ -1,3 +1,5 @@
+# https://chaemi720.tistory.com/152
+
 def solution(d, budget):
     answer = 0
     # 최대한 많은 부서의 물품을 구매 -> 신청 금액이 낮은 부서부터 지원

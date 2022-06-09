@@ -1,3 +1,4 @@
+# https://chaemi720.tistory.com/150
 
 # M*N 크기의 보드
 N,M = map(int,input().split())

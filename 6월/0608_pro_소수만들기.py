@@ -1,3 +1,5 @@
+# https://chaemi720.tistory.com/151
+
 from itertools import combinations
 
 # 소수 확인
@@ -22,3 +24,28 @@ def solution(nums):
             answer += 1
 
     return answer
+
+
+
+# 시간초과 대비용
+
+# from itertools import combinations
+
+# def solution(nums):
+#     cnt = 0
+#     # 3개씩 조합으로 뽑기
+#     for num in list(combinations(nums, 3)):
+#         # 합
+#         N = sum(num)
+        
+#         # 소수인지 확인
+#         # 2~int(루트(N))까지 확인
+#         for i in range(2, int(N**0.5)+1):
+#             # 나누어 떨어지면 소수X
+#             if N % i == 0:
+#                 break
+#         # 하나라도 나누어 떨어지지 않으면 소수
+#         else:
+#             cnt += 1
+        
+#     return cnt

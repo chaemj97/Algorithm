@@ -1,3 +1,5 @@
+# https://chaemi720.tistory.com/153
+
 def solution(N, road, K):
     # 마을 간 걸리는 시간 2차원 행렬로 정리 
     path = [[0]*(N+1) for _ in range(N+1)]
