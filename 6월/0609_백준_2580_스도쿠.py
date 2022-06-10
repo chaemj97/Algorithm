@@ -1,40 +1,39 @@
-
+from collections import deque
 sudoku = [list(map(int,input().split())) for _ in range(9)]
 
-# 가로,세로
-def sudoku_check(sudoku):
-    for r in range(9):
-        res = set([i for i in range(1,10)])
-        res -= set(sudoku[r])
-        if len(res) == 1:
-            for c in range(9):
-                if sudoku[r][c] == 0:                
-                    sudoku[r][c] = list(res)[0]
-                    break
-# 가로
-sudoku_check(sudoku)
+# 가로 확인-> 세로 확인-> 3*3확인 : 실패....
 
-# 세로
-# 전치
-sudoku = list(map(list,zip(*sudoku)))
-sudoku_check(sudoku)
-sudoku = list(map(list,zip(*sudoku)))
-# 3*3
-for r in range(0,9,3):
-    for c in range(0,9,3):
-        res = set([i for i in range(1,10)])
-        x,y = -1,-1
-        for i in range(r,r+3):
-            for j in range(c,c+3):
-                if sudoku[i][j] != 0:
-                    res -= set([sudoku[i][j]])
-                else:
-                    x,y = i,j
-        if len(res) == 1 and x != -1 and y != -1:
-            sudoku[x][y] = list(res)[0]
-print()     
-for k in sudoku:
-    print(*k)
+# 가로, 세로, 3*3 동시에 확인?
 
+# 0 찾기
+zero = deque()
+for r in range(9):
+    for c in range(9):
+        if sudoku[r][c] == 0:
+            zero.append((r,c))
+
+while zero:
+    num = [i for i in range(1,10)]
+    r,c = zero[0]
+    # 가로 세로 확인
+    for n in range(9):
+        if sudoku[r][n] in num:
+            num.remove(sudoku[r][n])
+        if sudoku[n][c] in num:
+            num.remove(sudoku[n][c])
+    # 3*3 확인
+    x=r//3
+    y=c//3
+    for i in range(x*3,(x+1)*3):
+        for j in range(y*3,(y+1)*3):
+            if sudoku[i][j] in num:
+                num.remove(sudoku[i][j])
     
-        
+    if len(num) == 1:
+        sudoku[r][c] = num[0]
+        zero.popleft()
+    else:
+        zero.rotate(-1)
+
+for p in sudoku:
+    print(*p)
