@@ -1,3 +1,5 @@
+# https://chaemi720.tistory.com/159
+
 # 정수 K개
 K = int(input())
 num = []
