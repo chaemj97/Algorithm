@@ -13,3 +13,11 @@
 
 # list.sort() : 원본 변경, return None
 # sorted(list) : 원본 변경X, return 정렬 결과
+
+# set 요소 삭제
+# set.remove(x) : 만약 x가 없다면 keyError
+# set.discard(x) : 만약 x가 없으면 pass
+
+for i in range(4):
+    for j in range(i+1,5):
+        print(i,j)
