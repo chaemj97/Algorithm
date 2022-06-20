@@ -1,3 +1,5 @@
+# https://chaemi720.tistory.com/173
+
 from copy import deepcopy
 from sys import stdin
 from collections import deque
