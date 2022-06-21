@@ -1,3 +1,5 @@
+# https://chaemi720.tistory.com/178
+
 from sys import stdin
 
 # N개의 자연수 중 M개 고르기

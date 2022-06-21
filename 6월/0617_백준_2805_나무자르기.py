@@ -5,13 +5,23 @@ from sys import stdin
 N,M = map(int,stdin.readline().split())
 tree = list(map(int,stdin.readline().split()))
 
-# 절단기에 설정할 수 있는 최대 높이
-height = max(tree)
-# height로 자르면 잘리는 나무 수
-cnt = 0
-while M > 0 and height > 0:
-    cnt += tree.count(height)
-    M -= cnt
-    height -= 1
+# 이진탐색
+start,end = 0, max(tree)
 
-print(height)
+while start <= end:
+    mid = (start + end)//2
+
+    # 현재 자를 수 있는 나무길이
+    log = 0
+    for i in tree:
+        if i > mid:
+            log += i - mid
+    
+    # 원하는 나무 길이보다 작으면 높이를 down
+    # 원하는 나무 길이보다 크면 높이를 up
+    if log >= M:
+        start = mid + 1
+    else:
+        end = mid - 1
+
+print(end)
