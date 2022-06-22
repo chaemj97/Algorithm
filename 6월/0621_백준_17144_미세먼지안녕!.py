@@ -35,7 +35,7 @@ for _ in range(T):
     for i in range(R):
         for j in range(C):
             dust[i][j] += room_dust[i][j]
-
+    print(dust)
     # 2. 공기청정기 돌리기
     # 위쪽 공기청정기(반시계방향)
     lr = [0,-1,0,1]
