@@ -1,4 +1,4 @@
-
+# https://chaemi720.tistory.com/190
 
 from sys import stdin
 import copy
@@ -30,7 +30,7 @@ move_idx = [
 for order in orders:
     # 이동
     x, y = x + move[order][0], y + move[order][1]
-    
+
     # 지도 바깥으로 이동은 무시
     if not (0 <= x < N) or not (0 <= y < M):
         x, y = x - move[order][0], y - move[order][1]
@@ -52,3 +52,43 @@ for order in orders:
     # 주사위 윗면에 쓰여 있는 수 출력
     print(dice[1])
 
+# n, m, x, y, k = map(int, input().split())
+
+# board = []
+# for i in range(n):
+#     board.append(list(map(int, input().split())))
+# order = list(map(int, input().split()))
+
+# dx = [0, 0, -1, 1]
+# dy = [1, -1, 0, 0]
+
+# dice = [0 for _ in range(6)]
+
+
+# def turn(dir):
+#     global dice
+#     if dir == 0:
+#         dice[0], dice[2], dice[3], dice[5] = dice[3], dice[0], dice[5], dice[2]
+#     elif dir == 1:
+#         dice[0], dice[2], dice[3], dice[5] = dice[2], dice[5], dice[0], dice[3]
+#     elif dir == 2:
+#         dice[0], dice[1], dice[4], dice[5] = dice[4], dice[0], dice[5], dice[1]
+#     else:
+#         dice[0], dice[1], dice[4], dice[5] = dice[1], dice[5], dice[0], dice[4]
+
+
+# for i in range(k):
+#     direction = order[i] - 1
+#     nx = x + dx[direction]
+#     ny = y + dy[direction]
+#     if 0 <= nx < n and 0 <= ny < m:
+#         turn(direction)
+
+#         if board[nx][ny] == 0:
+#             board[nx][ny] = dice[5]
+#         else:
+#             dice[5] = board[nx][ny]
+#             board[nx][ny] = 0
+
+#         x, y = nx, ny
+#         print(dice[0])
