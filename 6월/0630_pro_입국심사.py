@@ -4,6 +4,7 @@
 def cnt(num,times):
     c = 0
     for t in times:
+    	# 각 입국심사대에서 시간 내에 처리 가능한 사람 수
         c += num//t
     return c
 

@@ -64,7 +64,6 @@ for order in orders:
 
 # dice = [0 for _ in range(6)]
 
-
 # def turn(dir):
 #     global dice
 #     if dir == 0:

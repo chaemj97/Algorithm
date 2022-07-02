@@ -3,7 +3,7 @@
 def solution(n, arr1, arr2):
     answer = []
     for i in range(n):
-        # 2진수로 바꾸기 / 5자리 0으로 채우기
+        # 2진수로 바꾸기 / n자리 0으로 채우기
         a = bin(arr1[i])[2:].zfill(n)
         b = bin(arr2[i])[2:].zfill(n)
         result = ''

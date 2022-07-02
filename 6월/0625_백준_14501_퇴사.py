@@ -1,40 +1,23 @@
-# N = int(input())
-# li = [list(map(int, input().split())) for _ in range(N)]
-# dp = [0 for _ in range (N+1)]
-
-# for i in range(N-1, -1, -1):
-#     if i + li[i][0] > N:
-#         dp[i] = dp[i+1]
-#     else:
-#         dp[i] = max(dp[i+1], li[i][1] + dp[i + li[i][0]])
-    
-# print(dp[0])
+# https://chaemi720.tistory.com/197
 
 from sys import stdin
 input = stdin.readline
 
-# 상담일
+# 근무 일
 N = int(input())
+# 상담 [걸리는 시간, 받을 수 있는 금액]
 counsel = [list(map(int,input().split())) for _ in range(N)]
 
-# 얻을 수 있는 최대 이익
-max_profit = 0
+# 각 근무일까지 얻을 수 있는 최대 이익
+dp = [0 for _ in range(N+1)]
 
-def check(idx,profit):
-    global max_profit
-    # 상담 일정을 다 세웠는가?
-    if idx == N:
-        # 최대 수익인가?
-        if profit > max_profit:
-            max_profit = profit
-        return
-    # 상담 일정 세우기
-    for t,p in counsel[idx:]:
-        # 퇴사 전에 마무리 가능한 상담인가
-        if idx + t < N:
-            check(idx+t,profit+p)
+for day in range(N-1,-1,-1):
+    # 해당 일의 상담을 근무 종료 전 마무리 가능한 경우
+    if day + counsel[day][0] <= N:
+        # 근무를 하는 경우 / 근무를 하지 않는 경우 중 최대 이익이 나는 것 고르기
+        dp[day] = max(dp[day+1],dp[day+counsel[day][0]] + counsel[day][1])
+    # 해당 일의 상담을 근무 종료 전 마무리 불가능 한 경우
     else:
-        return
+        dp[day] = dp[day+1]
 
-check(0,0)
-print(max_profit)
+print(dp[0])

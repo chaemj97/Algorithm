@@ -15,7 +15,6 @@ def check(r, c, s, cnt, used):
     if cnt == 4:
         # 합이 최대?
         max_sum = max(max_sum,s)
-        print(used)
         return
     # 테트로미노 만들기
     for dr, dc in [[-1,0],[1,0],[0,1]]:
