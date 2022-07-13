@@ -1,6 +1,5 @@
 
 
-from ast import If
 from sys import stdin
 input = stdin.readline
 # 장소 세로, 가로
