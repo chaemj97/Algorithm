@@ -34,6 +34,7 @@ def insert(idx,result):
         return
 
     # 첫번째 연산자가 괄호 안
+    # eval(문자 + 연산자 + 문자) -> 결과는 숫자
     first = str(eval(result + oper[idx] + num[idx+1]))
     insert(idx+1,first)
 
