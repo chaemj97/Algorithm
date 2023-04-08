@@ -6,4 +6,4 @@
 import sys
 input = sys.stdin.readline
 
-print(11339-105*105-15*15)
+n = int(input())
