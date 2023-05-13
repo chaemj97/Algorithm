@@ -16,7 +16,7 @@ for _ in range(t):
     # 일관성 default는 yes 
     answer = 'YES'
     for i in range(n-1):
-        # i번째 전화번호가 i+1번째에 접두어인가?
+        # i번째 전화번호가 i+1번째 전화번호 접두어인가?
         if p_num[i+1].startswith(p_num[i]):
         # if p_num[i] == p_num[i+1][:len(p_num[i])]:
             answer = 'NO'
