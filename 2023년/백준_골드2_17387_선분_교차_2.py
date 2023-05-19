@@ -22,7 +22,7 @@ ccw342 = ccw(x3,y3,x4,y4,x2,y2)
 # 평행
 if ccw123*ccw124 == 0 and ccw341*ccw342 == 0:
     pass
-
+# '여기다'
 else:
     # 교차
     if ccw123*ccw124 <= 0 and ccw341*ccw342 <= 0:
