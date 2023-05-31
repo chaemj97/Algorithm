@@ -18,7 +18,7 @@ answer = 0
 for p in permutations(arr,n):
     muscle = 500
     for i in p:
-        muscle = muscle + i -k
+        muscle = muscle + i - k
         # 근손실이 났는가?
         if muscle < 500:
             break
