@@ -1,7 +1,6 @@
 '''
     접근법
         그래프 부모 찾기 : find_parent(x)
-    
 '''
 import sys
 input = sys.stdin.readline
