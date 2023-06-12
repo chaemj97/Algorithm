@@ -1,6 +1,6 @@
 '''
     접근법
-    
+        https://chaemi720.tistory.com/311
 '''
 from collections import deque
 import sys
