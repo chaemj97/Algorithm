@@ -18,6 +18,9 @@ for _ in range(k):
         for c in range(c1,c2):
             arr[r][c] = 1
 
+# from pprint import pprint
+# pprint(arr)
+
 # 분리된 영역 구하기
 
 # 분리된 영역 넓이
