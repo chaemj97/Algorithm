@@ -10,40 +10,43 @@ input = sys.stdin.readline
 
 # 노드의 개수
 N = int(input())
-node = [0]*(10000)
-node[1] = 'A'
-
+# 트리
+tree = {}
 for _ in range(N):
-    # 루트, 자식, 자식
-    a,b,c = input().split()
-    i = node.index(a)
-    if b != '.':
-        node[i*2] = b
-    if c != '.':
-        node[i*2+1] = c
+    root,left,right = input().split()
+    tree[root] = [left,right]
 
-# 전위순회
-def preorder(idx):
-    if node[idx]:
-        print(node[idx],end='')
-        preorder(idx*2)
-        preorder(idx*2+1)
-preorder(1)
+# 전위순회 : 루트 -> 왼쪽 -> 오른쪽
+def preorder(root):
+    if root != '.':
+        # 루트
+        print(root,end='')
+        # 왼쪽
+        preorder(tree[root][0])
+        # 오른쪽
+        preorder(tree[root][1])
+preorder('A')
 print()
 
-# 중위순회
-def inorder(idx):
-    if node[idx]:
-        inorder(idx*2)
-        print(node[idx],end='')
-        inorder(idx*2+1)
-inorder(1)
+# 중위순회 : 왼쪽 -> 루트 -> 오른쪽
+def inorder(root):
+    if root != '.':
+        # 왼쪽
+        inorder(tree[root][0])
+        # 루트
+        print(root,end='')
+        # 오른쪽
+        inorder(tree[root][1])
+inorder('A')
 print()
 
-# 후위순회
-def postorder(idx):
-    if node[idx]:
-        postorder(idx*2)
-        postorder(idx*2+1)
-        print(node[idx],end='')
-postorder(1)
+# 후위순회 : 왼쪽 -> 오른쪽 -> 루트
+def postorder(root):
+    if root != '.':
+        # 왼쪽
+        postorder(tree[root][0])
+        # 오른쪽
+        postorder(tree[root][1])
+        # 루트
+        print(root,end='')
+postorder('A')
