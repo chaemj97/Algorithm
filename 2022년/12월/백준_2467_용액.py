@@ -4,18 +4,6 @@ input = sys.stdin.readline
 N = int(input())
 liquids = list(map(int,input().split()))
 
-#--------시간초과----------
-# from itertools import combinations
-
-# s = float('inf')
-# answer = []
-# for i in combinations(arr,2):
-#     ss = i[0] + i[1]
-#     if abs(ss) < s:
-#         s = abs(ss)
-#         answer = i 
-# print(*answer)
-
 # 양끝에서 중앙으로
 one_idx = 0
 two_idx = N-1
