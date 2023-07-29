@@ -2,7 +2,6 @@
     접근법
         나열할 수 있는 모든 순서 구하기
             차이의 합이 최대인가?
-    
 '''
 from itertools import permutations
 import sys
